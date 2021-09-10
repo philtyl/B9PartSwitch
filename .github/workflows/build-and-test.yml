@@ -42,7 +42,7 @@ jobs:
       - name: Download KSP DLLs
         id: download-ksp-dlls
         run: |
-          aws --no-sign-request --region us-east-1 s3 cp s3://blowfish-ksp-dlls/ksp-${{ steps.set-ksp-version.outputs.ksp-version }}.zip '/tmp/KSP_DLLs.zip'
+          aws --no-sign-request --region us-east-1 s3 cp s3://dad-ksp-dlls/ksp-${{ steps.set-ksp-version.outputs.ksp-version }}.zip '/tmp/KSP_DLLs.zip'
           KSP_DLL_PATH="/opt/ksp/assembly/${{ steps.set-ksp-version.outputs.ksp-version }}"
           echo "::set-output name=ksp-dll-path::${KSP_DLL_PATH}"
           mkdir -p "${KSP_DLL_PATH}"
